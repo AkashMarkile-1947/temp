@@ -1,11 +1,26 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import HeroSection from '../../components/Hero'
+import Clients from '../../components/Clients'
+import AboutUsPage from '../../components/About'
+import { HeroLinks } from '../../components/Hero'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <>
+    <HeroSection />
+    <div className="flex w-full bg-black flex md:hidden  bottom-0 justify-around flex-wrap py-4">
+      <HeroLinks title="IP Networking" />
+      <HeroLinks title="Instrumentation" />
+      <HeroLinks title="IP Security" />
+      <HeroLinks title="Metal Fabrication" />
+    </div>
+    <AboutUsPage />
+    <Clients />
+    </>
+    /*<main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
@@ -120,5 +135,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  */)
 }
