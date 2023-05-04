@@ -10,7 +10,7 @@ const AboutUsPage = () => {
 
   return (
     <div className="py-10 px-4 sm:px-8 md:px-12 lg:px-20 bg-white text-black">
-      <h2 className="text-4xl font-bold text-center mb-10">About Us</h2>
+      <h2 className="text-4xl font-bold text-center mb-10 underline-offset-8" style={{ textDecoration: 'underline'}}>About Us</h2>
       <div className="flex flex-col sm:flex-row mb-10">
         <div className="sm:w-1/2 sm:pr-8 mb-6 sm:mb-0">
           <h3 className="text-2xl font-bold mb-4">Our Story</h3>
