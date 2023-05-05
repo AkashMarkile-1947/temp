@@ -2,23 +2,23 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
 const {name,email, message, subject} = req.body;
+const  USER =  process.env.USER, PASS =process.env.PASS, TO = process.env.TO;
 /* console.log(name, email, message, subject);
  */var transporter = nodemailer.createTransport({
     service: 'hotmail',
     auth: {
-      user: process.env.USER,
-      pass: process.env.PASS,
+      user: USER,
+      pass: PASS,
     },
     tls: {
       rejectUnauthorized: false
     }
 });
 
-/* console.log(process.env.USER, process.env.PASS, process.env.TO);
- */
+ /* res.json({USER, PASS, TO, name: "akash"}); */
 var mailOptions = {
-  from: process.env.USER,
-  to: process.env.TO,
+  from: USER,
+  to: TO,
   subject: subject,
   text: `
   Name: ${name}\n,
