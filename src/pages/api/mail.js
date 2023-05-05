@@ -15,7 +15,6 @@ const  USER =  process.env.USER, PASS =process.env.PASS, TO = process.env.TO;
     }
 });
 
- res.json({USER, PASS, TO, name: "akash"});
 var mailOptions = {
   from: USER,
   to: TO,
