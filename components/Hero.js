@@ -6,11 +6,17 @@ const inter = Inter({ subsets: ['latin'] })
 const HeroSection = () => {
     return (
       <div>
-      <div className="relative h-screen">
+      <div className="relative h-[91vh]">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
           {/* Replace video with blue linear gradient on small devices */}
           <div className="hidden md:block absolute top-0 left-0 w-full h-full object-cover z-0 md:" />
-          <div className="md:hidden absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-500 to-blue-800 z-0" />
+          <div className="md:hidden absolute top-0 left-0 w-full h-full">
+            <img
+              src="/hero_xs.jpg"
+              alt="industry 4.0"
+              className="object-cover z-0"
+            />
+          </div>
           <video
             className="hidden md:block absolute top-0 left-0 w-full h-full object-cover z-0"
             autoPlay
@@ -19,22 +25,22 @@ const HeroSection = () => {
             src="/hero.mp4"
             type="video/mp4"
           />
-          <div className="absolute top-0 left-[-100px] w-5/6 md:w-2/3 h-full bg-black opacity-50 z-0 skew-x-12" />
+          <div className="absolute hidden md:block top-0 left-[-100px] w-5/6 md:w-2/3 bg-black h-full opacity-50 z-0 skew-x-12" />
         </div>
         <div className="absolute top-1/2 left-[33%] transform -translate-x-[50%] -translate-y-[50%] text-left text-white  z-5 h-fit w-[66%] flex  flex-col justify-center parent-container">
-        <div className="h-fit w-full bg-emerald-800 skew-x-[165deg] relative left-[-20px] hidden md:block ">
-          <h1 className="text-xl md:text-4xl font-bold mb-[32px] md:pl-[30px] skew-x-[12deg]">Industry 4.0 Evolution</h1>
+        <div className="h-fit w-full  bg-transparent skew-x-[165deg] relative left-[-20px] hidden md:block  mb-[12%] ml-[5%]">
+          <h1 className="text-xl md:text-4xl font-bold md:pl-[30px] skew-x-[12deg]">Industry 4.0 Evolution</h1>
           <p className="text-base md:text-lg leading-7 w-[15ch]  md:w-[45ch] skew-x-[12deg] md:pl-[50px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
         </div>
-        <div className="flex w-full bg-black hidden md:flex  absolute bottom-0 justify-around flex-wrap py-4">
-            <HeroLinks title="IP Networking" />
-            <HeroLinks title="Instrumentation" />
-            <HeroLinks title="IP Security" />
-            <HeroLinks title="Metal Fabrication" />
+        <div className="flex w-full backdrop-blur-md hidden md:flex  absolute bottom-0 justify-around flex-wrap py-4">
+          <HeroLinks title="Data Internet" />
+          <HeroLinks title="Control panel" />
+          <HeroLinks title="Wherehouse Management" />
+          <HeroLinks title="Components Manufacturing" />
         </div>
       </div>
       </div>

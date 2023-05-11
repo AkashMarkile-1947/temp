@@ -3,9 +3,14 @@ import ImageSlideshow from "./ImageSlider";
 
 const AboutUsPage = () => {
   const images = [
-    '/ip-networking.png',
-    '/robotics.png',
-    '/automation.png'
+    '/one.jpg',
+    '/two.jpg',
+    '/three.jpg',
+    '/four.jpg',
+    '/five.jpg',
+    '/six.jpg',
+    '/seven.jpg',
+    '/eight.jpg'
   ];
 
   return (

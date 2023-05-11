@@ -12,10 +12,10 @@ export default function Home() {
     <>
     <HeroSection />
     <div className="flex w-full bg-black flex md:hidden  bottom-0 justify-around flex-wrap py-4">
-      <HeroLinks title="IP Networking" />
-      <HeroLinks title="Instrumentation" />
-      <HeroLinks title="IP Security" />
-      <HeroLinks title="Metal Fabrication" />
+      <HeroLinks title="Data Internet" />
+      <HeroLinks title="Control panel" />
+      <HeroLinks title="Wherehouse Management" />
+      <HeroLinks title="Components Manufacturing" />
     </div>
     <AboutUsPage />
     <hr className="w-full" />

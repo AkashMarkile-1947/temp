@@ -1,13 +1,13 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Workshop', href: '#', current: false },
-  { name: 'Contact', href: '/contact', current: false },
-  /*{ name: 'Calendar', href: '#', current: false },*/
+  { name: 'About Us', href: '#', current: false },
+  { name: 'Contact Us', href: '/contact', current: false },
 ]
 
 function classNames(...classes) {
@@ -15,8 +15,9 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+
   return (
-    <Disclosure as="nav" className="bg-gray-950 sticky top-0 w-full z-10 p-2">
+    <Disclosure as="nav" className="bg-gray-950 sticky top-0 w-full z-10 p-2" id="nav">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -36,42 +37,23 @@ export default function Example() {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src="/logo.png"
                     alt="Your Company"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src="/logo.png"
                     alt="Your Company"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-md font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                    {/*---------------------------------------------*/}
+                    <NavLinks />
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                {/*<button
-                  type="button"
-                  className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                        </button>*/}
-
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
@@ -79,7 +61,7 @@ export default function Example() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-10 w-10 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src="/amit_wani.png"
                         alt=""
                       />
                     </Menu.Button>
@@ -104,26 +86,6 @@ export default function Example() {
                           </a>
                         )}
                       </Menu.Item>
-                      {/*<Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-md text-gray-700')}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-md text-gray-700')}
-                          >
-                            Sign out
-                          </a>
-                        )}
-                        </Menu.Item>*/}
                     </Menu.Items>
                   </Transition>
                 </Menu>
@@ -152,5 +114,33 @@ export default function Example() {
         </>
       )}
     </Disclosure>
+  )
+}
+
+function NavLinks() {
+  const router = useRouter()
+
+  // Update the `current` property of the `navigation` array
+  const updatedNavigation = navigation.map((item) => {
+    return {
+      ...item,
+      current: item.href === router.asPath,
+    }
+  })
+
+  return (
+    updatedNavigation.map((item) => (
+      <Link
+        key={item.name}
+        href={item.href}
+        className={classNames(
+          item.current ? 'bg-gray-900 text-white' : 'text-black hover:bg-gray-700 hover:text-white',
+          'rounded-md px-3 py-2 text-md font-medium'
+        )}
+        aria-current={item.current ? 'page' : undefined}
+      >
+        {item.name}
+      </Link>
+    ))
   )
 }

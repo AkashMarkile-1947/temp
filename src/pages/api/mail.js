@@ -1,40 +1,64 @@
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
-const {name,email, message, subject} = req.body;
-const  USER =  process.env.USER, PASS =process.env.PASS, TO = process.env.TO;
-/* console.log(name, email, message, subject);
- */var transporter = nodemailer.createTransport({
-    service: 'hotmail',
+  const { name, email, message } = req.body;
+
+  // Set up the transporter
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.office365.com',
+    port: 587,
+    secure: false,
     auth: {
-      user: USER,
-      pass: PASS,
+      user: process.env.FROM,
+      pass: process.env.PASS,
     },
     tls: {
-      rejectUnauthorized: false
-    }
-});
+      ciphers: 'SSLv3',
+    },
+  });
 
-var mailOptions = {
-  from: USER,
-  to: TO,
-  subject: subject,
-  text: `
-  Name: ${name}\n,
-  Email: ${email}\n,
-  Subject ${subject}\n,
-  Message: ${message}`
-  // html: '<h1>Hi Smartherd</h1><p>Your Messsage</p>'        
-};
+  // Create the email message
+  const mailOptions = {
+    from: process.env.FROM,
+    to: process.env.TO,
+    subject: `New message from ${name}`,
+    text: message,
+  };
 
-console.log(message);
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    res.json({status: 'failure', error: 'failed to deliver'})
-  } else {
-/*     console.log('Email sent: ' + info.response);
- */    res.json({status: 'ok', message: info.response});
+  try {
+    // Send the email
+    await transporter.sendMail(mailOptions);
+
+    // Return a success response
+    res.json({ status: 'ok', message: 'Email sent successfully' });
+  } catch (error) {
+    // Log the error and return an error response
+    console.error(error);
+    res.json({ message: 'Error sending email', error: error});
   }
-});
+}
 
-} 
+/* import sgMail from '@sendgrid/mail';
+
+export default async function handler(req, res) {
+  const { name, email, message } = req.body;
+
+  sgMail.setApiKey(process.env.AUTH_TOKEN);
+
+  const msg = {
+    to: 'wiromatic@gmail.com', // Replace with your own email address
+    from: 'amitwani@hotmail.com',
+    subject: `New message from ${name} ${email}`,
+    text: message,
+  };
+
+  try {
+    await sgMail.send(msg);
+    res.status(200).json({ message: 'Message sent successfully' });
+  } catch (error) {
+    let err =  await JSON.stringify(error)
+    res.status(500).json({ error: err  });
+  }
+}
+
+ */

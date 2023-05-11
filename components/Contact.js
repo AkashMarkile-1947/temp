@@ -34,7 +34,7 @@ const ContactForm = () => {
     if (response.status === 'ok') {
         alert(response.message);
     } else {
-        alert(response.error);
+        alert(response.message);
     }
     setSubmitting(false);
   };
