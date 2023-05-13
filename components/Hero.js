@@ -54,8 +54,7 @@ export const HeroLinks = ({title}) =>  {
     return (
         <a
         href="#"
-        className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-        target="_blank"
+        className="group rounded-lg hero-link border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         rel="noopener noreferrer"
       >
         <h2 className={`${inter.className} mb-3 text-base md:text-[2xl] font-semibold`}>
@@ -67,7 +66,7 @@ export const HeroLinks = ({title}) =>  {
         <p
           className={`${inter.className} m-0 max-w-[17ch]  md:max-w-[30ch] text-sm opacity-50`}
         >
-          Instantly deploy your Next.js site to a shareable URL with Vercel.
+          click for more details
         </p>
       </a>
     )
