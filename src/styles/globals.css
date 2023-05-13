@@ -36,3 +36,14 @@ body {
 #nav {
   background-color: #fff;
 }
+
+@media screen and (max-width: 450px) {
+  .hero-link {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 510px) {
+  .hero-link {
+    width: auto;
+  }
+}

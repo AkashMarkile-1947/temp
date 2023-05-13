@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
     <HeroSection />
-    <div className="flex w-full bg-black flex md:hidden  bottom-0 justify-around flex-wrap py-4">
+    <div className="flex w-full flex md:hidden bottom-0 justify-around flex-wrap py-4" style={{backgroundColor: '#030712'}}>
       <HeroLinks title="Data Internet" />
       <HeroLinks title="Control panel" />
       <HeroLinks title="Wherehouse Management" />
