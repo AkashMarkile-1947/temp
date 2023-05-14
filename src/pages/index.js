@@ -12,7 +12,7 @@ export default function Home() {
     <>
     <HeroSection />
     <div className="flex w-full flex md:hidden bottom-0 justify-around flex-wrap py-4" style={{backgroundColor: '#030712'}}>
-      <HeroLinks title="Data Internet" />
+      <HeroLinks title="Data Communication" />
       <HeroLinks title="Control panel" />
       <HeroLinks title="Wherehouse Management" />
       <HeroLinks title="Components Manufacturing" />

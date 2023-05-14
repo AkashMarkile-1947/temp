@@ -1,6 +1,9 @@
 import React from 'react';
-import bsnl from '../public/bsnl.webp';
 import Image from 'next/image';
+import ciscoLogo from '../public/cisco.png';
+import siemensLogo from '../public/siemens.png';
+import sbiLogo from '../public/sbi.png';
+import bsnlLogo from '../public/bsnl.webp';
 
 const Clients = () => {
   return (
@@ -8,42 +11,52 @@ const Clients = () => {
       <h1 className="text-center font-sans text-4xl font-bold underline-offset-8" style={{ textDecoration: 'underline'}}>Our Esteemed Partners</h1>
       <div className="w-full flex flex-wrap justify-around items-center">
         <div className="w-full sm:w-6/12 md:w-3/12 px-2">
-          <img
-            src="/suzlon.png"
-            className="w-[250px] sm:w-[200px] md:w-[150px] mx-auto h-auto aspect-[3/4] object-contain grayscale"
-            alt="bsnl logo"
+          <Image
+            src={ciscoLogo}
+            alt="cisco logo"
+            width={200}
+            height={200 * (3 / 4)}
+            className="mx-auto h-auto object-contain grayscale scale-[0.8]"
           />
         </div>
         <div className="w-full sm:w-6/12 md:w-3/12 px-2">
-          <img
-            src="/Renew.png"
-            className="w-[250px] sm:w-[200px] md:w-[150px] mx-auto h-auto aspect-[3/4] object-contain grayscale"
-            alt="bsnl logo"
+          <Image
+            src={siemensLogo}
+            alt="siemens logo"
+            width={200}
+            height={200 * (3 / 4)}
+            className="mx-auto h-auto object-contain grayscale"
           />
         </div>
         <div className="w-full sm:w-6/12 md:w-3/12 px-2">
-          <img
-            src="/sbi.png"
-            className="w-[250px] sm:w-[200px] md:w-[150px] mx-auto h-auto aspect-[3/4] object-contain grayscale"
-            alt="bsnl logo"
+          <Image
+            src={sbiLogo}
+            alt="sbi logo"
+            width={200}
+            height={200 * (3 / 4)}
+            className="mx-auto h-auto object-contain grayscale"
           />
         </div>
         <div className="w-full sm:w-6/12 md:w-3/12 px-2">
-          <img
-            src="/bsnl.webp"
-            className="w-[250px] sm:w-[200px] md:w-[150px] mx-auto h-auto aspect-[3/4] object-contain grayscale"
+          <Image
+            src={bsnlLogo}
             alt="bsnl logo"
+            width={200}
+            height={200 * (3 / 4)}
+            className="mx-auto h-auto object-contain grayscale"
           />
         </div>
         {/*
         <div className="w-full sm:w-6/12 md:w-3/12 px-2">
-          <img
-            src="/japfa2.png"
-            className="w-[250px] sm:w-[200px] md:w-[150px] mx-auto h-auto aspect-[3/4] object-contain grayscale"
-            alt="bsnl logo"
+          <Image
+            src={japfaLogo}
+            alt="japfa logo"
+            width={200}
+            height={200 * (3 / 4)}
+            className="mx-auto h-auto object-contain grayscale"
           />
         </div>
-  */}
+        */}
       </div>
     </div>
   );

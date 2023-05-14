@@ -22,32 +22,39 @@ const Footer = () => {
       </ul>
     </div>
   </div>
-  <div className="w-full md:w-1/4 md:ml-4">
+  <div className="w-full md:w-2/6 md:ml-4">
     <div className="mb-4">
-      <h2 className="text-2xl font-bold font-sans mb-2">WIROMATIC</h2>
+    <h2 className="text-2xl font-bold font-sans mb-2">WIROMATIC</h2>
+    <div className="flex w-full flex justify-between items-baseline">
+      <div>
       <p className="text-lg font-semibold">Communication Office:</p>
       <p>Flat No 13, Ronak Center</p>
       <p>Bhistabaug Chowk, </p>
       <p>Savedi Ahmednagar</p>
       <p>India 414003</p>
-      <br />
+      </div>
+      <div>
       <p className="text-lg font-semibold">Workshop Address:</p>
-      <p>Plot  No C24, MIDC</p>
-      <p>Shrirampur Dist. Ahmednagar</p>
+      <p>M/s Honeybee Automations</p>
+      <p>Plot No C24, MIDC Shrirampur</p>
+      <p>Dist. AHMEDNAGAR</p>
       <p>India 413709</p>
+      </div>
+    </div>
     </div>
   </div>
   </div>
   <hr className="w-full" />
   <div className="flex-col md:flex md:justify-between md:flex-row justify-start items-center">
-  <div className="mb-2">
-      <a href="#">Facebook</a>
-      <span className="mx-2">|</span>
-      <a href="#">Instagram</a>
-      <span className="mx-2">|</span>
-      <Link href="#">Linkedin</Link>
-    </div>
-  <p  className="">Company @2023</p>
+  <div>
+      <Link href="https://www.linkedin.com/in/amit-wani-801084208">Linkedin</Link>
+      <p>Contact Phone: +91 9422225757</p>
+  </div>
+  <div>
+    <p  className="">WiROMATIC@2023</p>
+    <p>Email id: wiroindia@gmail.com</p>
+  </div>
+  
   </div>
 </footer>
 
