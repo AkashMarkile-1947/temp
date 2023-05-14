@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 const HeroSection = () => {
     return (
       <div>
-      <div className="relative h-[91vh]">
+      <div className="relative h-[60vh] sm:h-[91vh]">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
           {/* Replace video with blue linear gradient on small devices */}
           <div className="hidden md:block absolute top-0 left-0 w-full h-full object-cover z-0 md:" />
@@ -37,7 +37,7 @@ const HeroSection = () => {
         </div>
         </div>
         <div className="flex w-full backdrop-blur-md hidden md:flex  absolute bottom-0 justify-around flex-wrap py-4">
-          <HeroLinks title="Data Internet" />
+          <HeroLinks title="Data Communication" />
           <HeroLinks title="Control panel" />
           <HeroLinks title="Wherehouse Management" />
           <HeroLinks title="Components Manufacturing" />
@@ -53,18 +53,18 @@ const HeroSection = () => {
 export const HeroLinks = ({title}) =>  {
     return (
         <a
-        href="#"
-        className="group rounded-lg hero-link border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+        href="#"//border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30
+        className="group rounded-lg hero-link bg-white rounded-lg px-5 py-4 mb-4 min-w-[65%] sm:min-w-[270px]"
         rel="noopener noreferrer"
       >
-        <h2 className={`${inter.className} mb-3 text-base md:text-[2xl] font-semibold`}>
+        <h2 className={`${inter.className} mb-3 text-base md:text-[2xl] font-semibold text-black`}>
           {title}{' '}
-          <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+          <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none text-black">
             -&gt;
           </span>
         </h2>
         <p
-          className={`${inter.className} m-0 max-w-[17ch]  md:max-w-[30ch] text-sm opacity-50`}
+          className={`${inter.className} m-0 max-w-[17ch]  md:max-w-[30ch] text-sm opacity-50 text-gray-950`}
         >
           click for more details
         </p>
